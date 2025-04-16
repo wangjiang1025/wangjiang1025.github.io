@@ -1,0 +1,175 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --bg-light: #f4f4f4;
+    --card-bg: #fff;
+    --card-border: #ddd;
+    --text-color: #333;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+}
+
+.intro {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    border-left: 5px solid var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.weapon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.weapon-card {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.weapon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weapon-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.weapon-card h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.weapon-card a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.weapon-card a:hover {
+    text-decoration: underline;
+}
+
+.weapon-nav {
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.weapon-nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--card-bg);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.weapon-nav a:hover {
+    background-color: #e2f1ff;
+}
+
+.weapon-nav img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .weapon-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}
